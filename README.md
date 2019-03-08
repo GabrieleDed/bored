@@ -2,7 +2,11 @@
 - [x] Replace "WEB system" with your system name
 
 ## Description
-- [ ] Provide WEB system description in few sentences - its purpose, users, etc.
+
+A system which generates random activities, providing user with a wide range to choose the most desirable. After Choosing the one user 
+wishes, the system provides the users with a certain information about the activity. 
+
+- [x] Provide WEB system description in few sentences - its purpose, users, etc.
 
 ## Entity definition
 - [ ] Define the entity ("object" that will be manipulated) of WEB system
