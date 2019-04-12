@@ -21,8 +21,8 @@ Name of entity - Activity
 - [ ] Entity should have at least 5 custom attributes
     - [x] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
     - [x] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: 
-    'Activity' - Description of the queried activity/n
-    'Accessibility' - A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]
+    -'Activity' - Description of the queried activity/n
+    -'Accessibility' - A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]
     'Type' - Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
     'Participants' - The number of people that this activity could involve[0, n]
     'Price' - A factor describing the cost of the event with zero being free [0, 1]
@@ -31,6 +31,7 @@ Name of entity - Activity
 
 ## API definition
 - [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
+    
 - [ ] Optionally define additional API methods that WEB system is going to expose
 - [ ] API should have at least 4 methods
     - [ ] A method to return entity by ID. Should not have request body
@@ -48,8 +49,9 @@ Name of entity - Activity
         - [ ] Return sorted entities by one of its attributes (both ascending and descending)
         - [ ] Other (should be approved by Product Owner (PO))
     - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body
-            DELETE /api/activity/{id}
+            DELETE /api/activity/{id} -deletes a specified
     - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity
+            PUT /api/activity/{id} - updates a specified id
 - [ ] Each method should have HTTP method defined
 - [ ] Each method should have URI defined (use {id} as entity ID placeholder)
 - [ ] Should return all 4xx errors in unified format. Define format using `joi` language
