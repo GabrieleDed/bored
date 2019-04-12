@@ -8,25 +8,25 @@ A system which asks the user if he wishes to provide information about the activ
 - [x] Provide WEB system description in few sentences - its purpose, users, etc.
 
 ## Entity definition
-- [ ] Define the entity ("object" that will be manipulated) of WEB system
+- [x] Define the entity ("object" that will be manipulated) of WEB system
 - [x] Entity should have a name
 
 Name of entity - Activity
 
-- [ ] Entity should have 3 mandatory attributes:
+- [x] Entity should have 3 mandatory attributes:
     - [x] ID - depending on specific service this could be a number or string
     
     "Key" - specific and unique set of numbers [1000000, 9999999]
     
-    - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
+    - [x] Creation date - (if applicable for specific service) ISO 8601 format date string
     
     'Cdate' -date the entity was created
     
-    - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
+    - [x] Modification date - (if applicable for specific service) ISO 8601 format date string
     
     'Mdate' - date the entity was modified
     
-- [ ] Entity should have at least 5 custom attributes
+- [x] Entity should have at least 5 custom attributes
     - [x] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
     - [x] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: 
     
@@ -62,6 +62,9 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
         
         
           Gets a specific activity by th key value(http://www.boredapi.com/api/activity?key=5881028)
+          
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
             
             
         - [x] Return only entities that match pattern in one of its attributes
@@ -120,7 +123,7 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
                 
                 GET /api/activity?minaccessibility=:minaccessibility&maxaccessibility=:maxaccessibili - Find an event with a specified accessibility in an inclusively constrained range (http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1)
                 
-                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing). (incorrect price)
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing). (incorrect price, accesability)
 
 
                 404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
