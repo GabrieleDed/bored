@@ -15,11 +15,17 @@ Name of entity - Activity
 
 - [ ] Entity should have 3 mandatory attributes:
     - [x] ID - depending on specific service this could be a number or string
+    
     "Key" - specific and unique set of numbers [1000000, 9999999]
+    
     - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
+    
     'Cdate' -date the entity was created
+    
     - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
+    
     'Mdate' - date the entity was modified
+    
 - [ ] Entity should have at least 5 custom attributes
     - [x] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
     - [x] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: 
@@ -33,7 +39,9 @@ Name of entity - Activity
 'Participants' - The number of people that this activity could involve[0, n]
 
 'Price' - A factor describing the cost of the event with zero being free [0, 1]
+
 'Key' - A unique numeric id [1000000, 9999999]
+
 https://github.com/hapijs/joi/blob/v13.1.2/API.md
 
 ## API definition
@@ -41,24 +49,50 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
     
 - [ ] Optionally define additional API methods that WEB system is going to expose
 - [ ] API should have at least 4 methods
-    - [ ] A method to return entity by ID. Should not have request body
+    - [x] A method to return entity by ID. Should not have request body
     
     GET - /api/activity/
+    
         - Gets random activity (http://www.boredapi.com/api/activity)
    
     
     - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
+            
+        Get - /api/activity?key=:key
+        
+            Gets a specific activity by th key value(http://www.boredapi.com/api/activity?key=5881028)
+            
         - [ ] Return only entities that match pattern in one of its attributes
         
-        Get - /api/activity?key=:key
-            Gets a specific activity by th key vlue(http://www.boredapi.com/api/activity?key=5881028)
+            Get - /api/activity?type=:type
+            
+            Get a specified activity type (http://www.boredapi.com/api/activity?type=recreational)
+           
         - [ ] Return 10 entities starting provided index
+        
+            Get - /api/activity/10/?type=:type
+            
+            Get a specified activity type (http://www.boredapi.com/api/activity/10/?type=recreational)
+        
         - [ ] Return sorted entities by one of its attributes (both ascending and descending)
+        
+        GET /api/asc/activity?participants=:participants - finds activity by the numbers of participant ascending
+        
+        
+        GET /api/des/activity?participants=:participants - finds activity by the numbers of participant descending
+        
         - [ ] Other (should be approved by Product Owner (PO))
-    - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body
-            DELETE /api/activity/{id} -deletes a specified
-    - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity
-            PUT /api/activity/{id} - updates a specified id
+        
+        
+        
+    - [x] A method to remove entity by ID. Returns removed entity. Should not have request body
+    
+            DELETE /api/activity/{id} -deletes a specified entity
+            
+    - [x] A method to update entity by ID. Accepts entity to update and returns updated entity
+    
+            PUT /api/activity/{id} - updates a specified entity
+            
 - [ ] Each method should have HTTP method defined
 - [ ] Each method should have URI defined (use {id} as entity ID placeholder)
 - [ ] Should return all 4xx errors in unified format. Define format using `joi` language
