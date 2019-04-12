@@ -120,6 +120,14 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
                 
                 GET /api/activity?minaccessibility=:minaccessibility&maxaccessibility=:maxaccessibili - Find an event with a specified accessibility in an inclusively constrained range (http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1)
                 
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing). (incorrect price)
+
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
+                
     - [x] A method to remove entity by ID. Returns removed entity. Should not have request body
     
             DELETE /api/activity/{id} -deletes a specified entity
@@ -162,5 +170,5 @@ https://wireframe.cc/pro/edit/240750
 - [x] The view should include at least 2 UI components:
     - [ ] A component to display multiple entities with all their attribute values visible. It should be posible to remove and edit selected entity.
         - [ ] Depending on chosen header of API method that returns multiple entities, it should be posible to select specific 10 entities starting index, sort entities by attribute, filter entities by attribute pattern, or other (should be approved by Product Owner (PO))
-    - [ ] A component to create a new entity/edit existing entity. It should be posbile to create new entity and edit selected entity
-        - [ ] Each attribute should have a dedicated editor field: text box for string or number, checkbox or radio buttons for boolean, date picker for date, etc.
+    - [x] A component to create a new entity/edit existing entity. It should be posbile to create new entity and edit selected entity
+        - [x] Each attribute should have a dedicated editor field: text box for string or number, checkbox or radio buttons for boolean, date picker for date, etc.
