@@ -48,6 +48,7 @@ Name of entity - Activity
         - [ ] Return sorted entities by one of its attributes (both ascending and descending)
         - [ ] Other (should be approved by Product Owner (PO))
     - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body
+            DELETE /api/activity/{id}
     - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity
 - [ ] Each method should have HTTP method defined
 - [ ] Each method should have URI defined (use {id} as entity ID placeholder)
