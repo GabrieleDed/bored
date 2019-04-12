@@ -45,10 +45,10 @@ Name of entity - Activity
 https://github.com/hapijs/joi/blob/v13.1.2/API.md
 
 ## API definition
-- [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
+- [x] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
     
-- [ ] Optionally define additional API methods that WEB system is going to expose
-- [ ] API should have at least 4 methods
+- [x] Optionally define additional API methods that WEB system is going to expose
+- [x] API should have at least 4 methods
     - [x] A method to return entity by ID. Should not have request body
     
     GET - /api/activity/
@@ -56,35 +56,42 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
         - Gets random activity (http://www.boredapi.com/api/activity)
    
     
-    - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
+    - [x] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
             
         Get - /api/activity?key=:key
         
             Gets a specific activity by th key value(http://www.boredapi.com/api/activity?key=5881028)
             
-        - [ ] Return only entities that match pattern in one of its attributes
+        - [x] Return only entities that match pattern in one of its attributes
         
             Get - /api/activity?type=:type
             
             Get a specified activity type (http://www.boredapi.com/api/activity?type=recreational)
            
-        - [ ] Return 10 entities starting provided index
+        - [x] Return 10 entities starting provided index
         
             Get - /api/activity/10/?type=:type
             
             Get a specified activity type (http://www.boredapi.com/api/activity/10/?type=recreational)
         
-        - [ ] Return sorted entities by one of its attributes (both ascending and descending)
+        - [x] Return sorted entities by one of its attributes (both ascending and descending)
         
         GET /api/asc/activity?participants=:participants - finds activity by the numbers of participant ascending
         
         
         GET /api/des/activity?participants=:participants - finds activity by the numbers of participant descending
         
-        - [ ] Other (should be approved by Product Owner (PO))
+        - [x] Other (should be approved by Product Owner (PO))
         
+                GET /api/activity?price=:price - Find an activity with a specified price (http://www.boredapi.com/api/activity?price=0.0)
         
+                
+                GET  /api/activity?minprice=:minprice&maxprice=:maxprice  - Find an event with a specified price in an inclusively constrained range (http://www.boredapi.com/api/activity?minprice=0&maxprice=0.1)
         
+                GET /api/activity?accessibility=:accessibility - Find a price in an inclusively constrained range (http://www.boredapi.com/api/activity?accessibility=1)
+                
+                GET /api/activity?minaccessibility=:minaccessibility&maxaccessibility=:maxaccessibili - Find an event with a specified accessibility in an inclusively constrained range (http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1)
+                
     - [x] A method to remove entity by ID. Returns removed entity. Should not have request body
     
             DELETE /api/activity/{id} -deletes a specified entity
