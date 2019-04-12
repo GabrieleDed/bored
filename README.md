@@ -17,12 +17,14 @@ Name of entity - Activity
     - [x] ID - depending on specific service this could be a number or string
     "Key" - specific and unique set of numbers [1000000, 9999999]
     - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
+    'Cdate' -date the entity was created
     - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
+    'Mdate' - date the entity was modified
 - [ ] Entity should have at least 5 custom attributes
     - [x] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
     - [x] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: 
-    -'Activity' - Description of the queried activity/n
-    -'Accessibility' - A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]
+    'Activity' - Description of the queried activity/n
+    'Accessibility' - A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]
     'Type' - Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
     'Participants' - The number of people that this activity could involve[0, n]
     'Price' - A factor describing the cost of the event with zero being free [0, 1]
