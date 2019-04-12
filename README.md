@@ -9,14 +9,23 @@ A system which asks the user if he wishes to provide information about the activ
 
 ## Entity definition
 - [ ] Define the entity ("object" that will be manipulated) of WEB system
-- [ ] Entity should have a name
+- [x] Entity should have a name
+Name of entity - Activity
 - [ ] Entity should have 3 mandatory attributes:
-    - [ ] ID - depending on specific service this could be a number or string
+    - [x] ID - depending on specific service this could be a number or string
+    "Key" - specific and unique set of numbers [1000000, 9999999]
     - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
     - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
 - [ ] Entity should have at least 5 custom attributes
-    - [ ] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
-    - [ ] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: https://github.com/hapijs/joi/blob/v13.1.2/API.md
+    - [x] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
+    - [x] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: 
+    'Activity' - Description of the queried activity
+    'Accessibility' - A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]
+    'Type' - Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
+    'Participants' - The number of people that this activity could involve[0, n]
+    'Price' - A factor describing the cost of the event with zero being free [0, 1]
+    'Key' - A unique numeric id [1000000, 9999999]
+    https://github.com/hapijs/joi/blob/v13.1.2/API.md
 
 ## API definition
 - [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
