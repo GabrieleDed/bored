@@ -53,26 +53,45 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
     
     GET - /api/activity/
     
-        - Gets random activity (http://www.boredapi.com/api/activity)
-   
     
+       Gets random activity (http://www.boredapi.com/api/activity)
+        
     - [x] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
             
         Get - /api/activity?key=:key
         
-            Gets a specific activity by th key value(http://www.boredapi.com/api/activity?key=5881028)
+        
+          Gets a specific activity by th key value(http://www.boredapi.com/api/activity?key=5881028)
+            
             
         - [x] Return only entities that match pattern in one of its attributes
         
-            Get - /api/activity?type=:type
+                Get - /api/activity?type=:type
             
-            Get a specified activity type (http://www.boredapi.com/api/activity?type=recreational)
+                Get a specified activity type (http://www.boredapi.com/api/activity?type=recreational)
+                
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).[33]
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
            
         - [x] Return 10 entities starting provided index
         
-            Get - /api/activity/10/?type=:type
+                Get - /api/activity/10/?type=:type
             
-            Get a specified activity type (http://www.boredapi.com/api/activity/10/?type=recreational)
+                
+                Get a specified activity type (http://www.boredapi.com/api/activity/10/?type=recreational)
+                
+                
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).[33]
+
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
         
         - [x] Return sorted entities by one of its attributes (both ascending and descending)
         
@@ -80,6 +99,15 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
         
         
         GET /api/des/activity?participants=:participants - finds activity by the numbers of participant descending
+        
+        
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).[33]
+
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
         
         - [x] Other (should be approved by Product Owner (PO))
         
@@ -96,14 +124,32 @@ https://github.com/hapijs/joi/blob/v13.1.2/API.md
     
             DELETE /api/activity/{id} -deletes a specified entity
             
+            
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).[33]
+
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
+            
     - [x] A method to update entity by ID. Accepts entity to update and returns updated entity
     
             PUT /api/activity/{id} - updates a specified entity
             
-- [ ] Each method should have HTTP method defined
-- [ ] Each method should have URI defined (use {id} as entity ID placeholder)
-- [ ] Should return all 4xx errors in unified format. Define format using `joi` language
-- [ ] Should return all 5xx errors in unified format. Define format using `joi` language
+            
+                400 Bad Request - The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).[33]
+
+
+                404 Not Found - The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+                
+                500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+                501 Not Implemented- The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API)
+            
+- [x] Each method should have HTTP method defined
+- [x] Each method should have URI defined (use {id} as entity ID placeholder)
+- [x] Should return all 4xx errors in unified format. Define format using `joi` language
+- [x] Should return all 5xx errors in unified format. Define format using `joi` language
 
 ## UI definition
 - [ ] Define the structure of how visually the WEB system is going to look like
