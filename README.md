@@ -10,7 +10,9 @@ A system which asks the user if he wishes to provide information about the activ
 ## Entity definition
 - [ ] Define the entity ("object" that will be manipulated) of WEB system
 - [x] Entity should have a name
+
 Name of entity - Activity
+
 - [ ] Entity should have 3 mandatory attributes:
     - [x] ID - depending on specific service this could be a number or string
     "Key" - specific and unique set of numbers [1000000, 9999999]
@@ -32,8 +34,16 @@ Name of entity - Activity
 - [ ] Optionally define additional API methods that WEB system is going to expose
 - [ ] API should have at least 4 methods
     - [ ] A method to return entity by ID. Should not have request body
+    
+    GET - /api/activity/
+        - Gets random activity (http://www.boredapi.com/api/activity)
+   
+    
     - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
         - [ ] Return only entities that match pattern in one of its attributes
+        
+        Get - /api/activity?key=:key
+            Gets a specific activity by th key vlue(http://www.boredapi.com/api/activity?key=5881028)
         - [ ] Return 10 entities starting provided index
         - [ ] Return sorted entities by one of its attributes (both ascending and descending)
         - [ ] Other (should be approved by Product Owner (PO))
